@@ -3,7 +3,7 @@
 Simples manager whatsapp-api
 __________________________________________________________
 ```
-goi clone https://github.com/rafaWPP/chat-zap-manager.git
+got clone https://github.com/rafaWPP/chat-zap-manager.git
 ```
 __________________________________________________________
 ```
