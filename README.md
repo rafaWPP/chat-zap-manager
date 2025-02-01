@@ -17,3 +17,8 @@ ____________________________________________________________
 ```
 go run .
 ```
+
+Rodar em pm2
+```
+pm2 start go --name chat-zap-manager -- run main.go
+```
