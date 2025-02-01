@@ -1,0 +1,532 @@
+/* === Definição de Cores === */
+:root {
+    --bg-dark: #0a1014;
+    --bg-light: #f5f7fa;
+    --text-dark: #f5f5f5;
+    --text-light: #2b2b3d;
+    --card-dark: #111b21;
+    --card-light:  rgba(29, 124, 107, 0.127);
+    --border-dark: #343a40;
+    --border-light: #d1d1d1;
+    --navbar-dark: #161b22;
+    --navbar-light: #def7f7;
+    --btn-dark: #444;
+    --btn-light: #e4e6eb;
+    --badge-light-info-bg: #d1ecf1;     /* Fundo claro */
+    --badge-light-info-text: #0c5460;   /* Texto escuro */
+    --badge-light-info-border: #bee5eb; /* Borda clara */
+
+     /* Ajusta as variáveis para o modo escuro */
+     @media (prefers-color-scheme: dark-mode) {
+        :root {
+          --badge-light-info-bg: #0c5460;     /* Fundo escuro */
+          --badge-light-info-text: #d1ecf1;   /* Texto claro */
+          --badge-light-info-border: #0c5460; /* Borda para manter o contraste */
+        }
+      }
+  
+      /* Estilização base para o badge */
+      .badge {
+        display: inline-block;
+        padding: 0.25em 0.4em;
+        font-size: 75%;
+        font-weight: 700;
+        line-height: 1;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: baseline;
+        border-radius: 10px;
+        border: 1px solid transparent;
+      }
+  
+      /* Estilo específico para o badge light info */
+      .badge-light-info {
+        background-color: var(--badge-light-info-bg);
+        color: var(--badge-light-info-text);
+        border-color: var(--badge-light-info-border);
+      }
+}
+
+/* === Modo Escuro === */
+.dark-mode {
+    background-color: var(--bg-dark);
+    color: var(--text-dark);
+}
+
+.dark-mode .navbar {
+    background-color: var(--navbar-dark);
+    color: var(--text-dark);
+}
+
+.dark-mode .navbar .btn {
+    background-color: var(--btn-dark);
+    color: white;
+    border: none;
+}
+
+.dark-mode .modal-content,
+.dark-mode .card {
+    background-color: var(--card-dark);
+    color: var(--text-dark);
+    border-color: var(--border-dark);
+}
+
+
+/* === Modo Claro === */
+.light-mode {
+    background-color: var(--bg-light);
+    color: var(--text-light);
+}
+
+.light-mode .navbar {
+    background-color: var(--navbar-light);
+    color: var(--text-light);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.light-mode .navbar .btn {
+    background-color: var(--btn-light);
+    color: var(--text-light);
+    border: 1px solid #ddd;
+}
+
+.frosted-glass-avatar {
+   /* From https://css.glass */
+   backdrop-filter: blur(16px);
+   -webki-backdrop-filter: blur(16px);
+   backdrop-filter: invert(80%);
+-webki-backdrop-filter: invert(80%);
+backdrop-filter: sepia(90%);
+-webki-backdrop-filter: sepia(90%);
+background: rgba(1, 110, 90, 0.5);
+  }
+  
+
+
+/* Botões */
+.btn-delete {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+}
+
+.btn-delete:hover {
+    background-color: #c82333;
+}
+
+
+/* Cartões das instâncias */
+.card {
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Avatar */
+.instance-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+/* Status */
+.status-connected {
+    background-color: #28a745 !important;
+}
+.status-connecting {
+    background-color: #ffc107 !important;
+}
+.status-offline {
+    background-color: #dc3545 !important;
+}
+
+/* Botão de deletar */
+.btn-delete {
+    background-color: #dc3545;
+    border: none;
+}
+.btn-delete:hover {
+    background-color: #c82333;
+}
+
+/* Centraliza o container de login */
+.login-container {
+    background: var(--card-dark);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    max-width: 400px;
+    width: 100%;
+}
+
+/* Logo no login */
+.login-logo {
+    width: 60px;
+    height: auto;
+}
+/* Navbar */
+.navbar-logo {
+    height: 30px;
+    width: auto;
+}
+
+
+/* === Estilos para Inputs no Modo Escuro === */
+.dark-mode .form-control {
+    background-color: var(--card-dark);
+    color: var(--text-dark);
+    border-color: var(--border-dark);
+}
+
+.dark-mode .form-control::placeholder {
+    color: rgba(245, 245, 245, 0.7); /* Um pouco mais claro para contraste */
+}
+
+.dark-mode .form-select {
+    background-color: var(--card-dark);
+    color: var(--text-dark);
+    border-color: var(--border-dark);
+}
+
+.dark-mode .form-select option {
+    background-color: var(--card-dark);
+    color: var(--text-dark);
+}
+
+/* === Estilos para Inputs no Modo Claro === */
+.light-mode .form-control {
+    background-color: var(--card-light);
+    color: var(--text-light);
+    border-color: var(--border-light);
+}
+
+.light-mode .form-control::placeholder {
+    color: rgba(43, 43, 61, 0.7); /* Um pouco mais escuro para contraste */
+}
+
+.light-mode .form-select {
+    background-color: var(--card-light);
+    color: var(--text-light);
+    border-color: var(--border-light);
+}
+
+.light-mode .form-select option {
+    background-color: var(--card-light);
+    color: var(--text-light);
+}
+
+/* === Ajustes para Botões Dentro de Input Groups === */
+.dark-mode .input-group .btn {
+    background-color: var(--btn-dark);
+    color: var(--text-dark);
+    border-color: var(--border-dark);
+}
+
+.light-mode .input-group .btn {
+    background-color: var(--btn-light);
+    color: var(--text-light);
+    border-color: var(--border-light);
+}
+
+/* === Estilos Adicionais para Melhor Legibilidade === */
+.dark-mode .badge {
+    color: white;
+}
+
+.light-mode .badge {
+    color: black;
+}
+
+/* === Ajuste de Cores para Outros Elementos (Opcional) === */
+.dark-mode .form-check-input {
+    background-color: var(--bg-dark);
+    border-color: var(--border-dark);
+}
+
+.light-mode .form-check-input {
+    background-color: var(--bg-light);
+    border-color: var(--border-light);
+}
+
+/* === Estilo Personalizado para Inputs de Token (Opcional) === */
+.card .form-control {
+    background-color: inherit; /* Herda a cor de fundo do card */
+    color: inherit; /* Herda a cor do texto do card */
+    border: 1px solid #ced4da; /* Ajuste conforme necessário */
+}
+
+.card .form-control:readonly {
+    background-color: #e9ecef; /* Cor diferente para inputs readonly no modo claro */
+}
+
+.dark-mode .card .form-control:readonly {
+    background-color: #343a40; /* Cor diferente para inputs readonly no modo escuro */
+}
+
+/* === Estilos para Textos no Modo Escuro === */
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode h4,
+.dark-mode h5,
+.dark-mode h6,
+.dark-mode p,
+.dark-mode span,
+.dark-mode small,
+.dark-mode a,
+.dark-mode label {
+    color: var(--text-dark);
+}
+
+.dark-mode a {
+    color: #0d6efd; /* Azul padrão para links no Bootstrap */
+}
+
+.dark-mode a:hover {
+    color: #0b5ed7; /* Azul mais escuro no hover */
+}
+
+/* === Estilos para Textos no Modo Claro === */
+.light-mode h1,
+.light-mode h2,
+.light-mode h3,
+.light-mode h4,
+.light-mode h5,
+.light-mode h6,
+.light-mode p,
+.light-mode span,
+.light-mode small,
+.light-mode a,
+.light-mode label {
+    color: var(--text-light);
+}
+
+.light-mode a {
+    color: #0d6efd; /* Azul padrão para links no Bootstrap */
+}
+
+.light-mode a:hover {
+    color: #0b5ed7; /* Azul mais escuro no hover */
+}
+
+/* === Ajustes para Placeholders nos Inputs === */
+.dark-mode .form-control::placeholder,
+.dark-mode .form-select::placeholder {
+    color: rgba(245, 245, 245, 0.7); /* Um pouco mais claro para contraste */
+}
+
+.light-mode .form-control::placeholder,
+.light-mode .form-select::placeholder {
+    color: rgba(43, 43, 61, 0.7); /* Um pouco mais escuro para contraste */
+}
+
+/* === Ajustes para Labels nos Formulários === */
+.dark-mode label {
+    color: var(--text-dark);
+}
+
+.light-mode label {
+    color: var(--text-light);
+}
+
+/* === Ajustes para Badges === */
+.dark-mode .badge {
+    color: white;
+}
+
+.light-mode .badge {
+    color: black;
+}
+
+/* === Ajustes para Botões Dentro de Input Groups === */
+.dark-mode .input-group .btn {
+    background-color: var(--btn-dark);
+    color: white;
+    border-color: var(--border-dark);
+}
+
+.light-mode .input-group .btn {
+    background-color: var(--btn-light);
+    color: var(--text-light);
+    border-color: var(--border-light);
+}
+
+/* === Estilo Personalizado para Inputs de Token === */
+.card .form-control {
+    background-color: inherit; /* Herda a cor de fundo do card */
+    color: inherit; /* Herda a cor do texto do card */
+    border: 1px solid #ced4da; /* Ajuste conforme necessário */
+}
+
+.card .form-control:readonly {
+    background-color: #e9ecef; /* Cor diferente para inputs readonly no modo claro */
+}
+
+.dark-mode .card .form-control:readonly {
+    background-color: #343a40; /* Cor diferente para inputs readonly no modo escuro */
+}
+
+/* === Links Dentro dos Cards === */
+.card a {
+    color: var(--text-dark);
+}
+
+.light-mode .card a {
+    color: var(--text-light);
+}
+
+.card a:hover {
+    text-decoration: underline;
+}
+
+/* Estilo personalizado para os cartões */
+.custom-card {
+    background: inherit; /* Usa a cor de fundo definida pelo tema */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.custom-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+/* Personalização do Avatar */
+.instance-avatar {
+    object-fit: cover;
+}
+
+/* Opcional: ajustes para os inputs dentro dos cartões */
+.card .form-control {
+    background-color: inherit;
+    border: 1px solid #ced4da;
+}
+
+.custom-footer {
+    background-color: rgba(0, 92, 75, 0.54);
+    width: 100%;
+    /* Se necessário, ajuste o padding para preencher bem a área */
+    padding: 0.75rem 1.25rem; 
+}
+
+.card-border-success {
+    border: 2px solid #005c4b;
+    border-top: none;
+}
+
+.custom-lower-section {
+    background-color: rgba(0,92,75,0.54);
+    padding: 20px 15px 10px;
+}
+
+/* Ajuste para evitar que o conteúdo fique escondido atrás da navbar fixa */
+body {
+    padding-top: 70px; /* ajuste conforme a altura da sua navbar */
+  }
+  
+  /* Modo Dark: Navbar preta */
+  .dark-mode .navbar {
+    background-color: #000000 !important;  /* ou utilize outro tom de preto */
+  }
+  
+  /* Modo Light: Navbar verde */
+  .light-mode .navbar {
+    background-color: rgba(3, 61, 51, 0.811) !important;  /* ajuste para a cor verde desejada */
+  }
+  
+  /* Caso queira manter os estilos dos botões na navbar, certifique-se de que os textos também fiquem legíveis */
+  .dark-mode .navbar .navbar-brand span,
+  .dark-mode .navbar a,
+  .dark-mode .navbar button {
+    color: #fff;
+  }
+  .light-mode .navbar .navbar-brand span,
+  .light-mode .navbar a,
+  .light-mode .navbar button {
+    color: #fff;
+  }
+  .dark-mode  .swal2-popup{
+    background-color: #111b21 !important;
+    color: #f5f5f5 !important;
+  }
+  
+  .avatar{
+    color: #005c4b;
+  }
+  .dark-mode .avatar{
+    color: #09c9a6;
+  }
+
+       /* Estilo base do spinner */
+    .spinner {
+        width: 17px;   /* Diminuído de 50px para 25px */
+        height: 17px;
+      }
+  
+      /* Aplica rotação contínua ao SVG */
+      .spinner svg {
+        animation: rotate 0.8s linear infinite;  /* Duração reduzida para 0.8s */
+        width: 100%;
+        height: 100%;
+      }
+  
+      /* Estilo e animação do círculo (traço do spinner) */
+      .spinner circle {
+        stroke: #4285F4;       /* Cor base: azul */
+        stroke-linecap: round;
+        stroke-width: 3;    
+        fill: none;
+        animation: dash 0.8s ease-in-out infinite; /* Duração reduzida para 0.8s */
+      }
+  
+      /* Se você utilizar classes modificadoras, lembre-se que elas sobrescrevem os valores
+         da classe base. Para manter a velocidade ultra rápida, ajuste ou remova essas classes. */
+  
+      /* Exemplo (opcional) para spinner de sucesso com a mesma velocidade */
+      .spinner.spinner--success svg {
+        animation-duration: 0.8s;
+      }
+      .spinner.spinner--success circle {
+        stroke: #28a745;        /* Verde */
+        animation-duration: 0.8s;
+      }
+
+      .spinner.spinner--info svg {
+        animation-duration: 0.8s;
+      }
+      .spinner.spinner--info circle {
+        stroke: #285ba7;        /* Verde */
+        animation-duration: 0.8s;
+      }
+  
+      /* Exemplo (opcional) para spinner de perigo com a mesma velocidade */
+      .spinner.spinner--danger svg {
+        animation-duration: 0.8s;
+      }
+      .spinner.spinner--danger circle {
+        stroke: #dc3545;        /* Vermelho */
+        animation-duration: 0.8s;
+      }
+  
+      /* Animação de rotação contínua */
+      @keyframes rotate {
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+  
+      /* Animação que cria o efeito de "crescer e encolher" do traço */
+      @keyframes dash {
+        0% {
+          stroke-dasharray: 1, 150;
+          stroke-dashoffset: 0;
+        }
+        50% {
+          stroke-dasharray: 90, 150;
+          stroke-dashoffset: -35;
+        }
+        100% {
+          stroke-dasharray: 90, 150;
+          stroke-dashoffset: -124;
+        }
+      }
