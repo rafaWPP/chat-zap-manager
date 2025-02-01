@@ -7,7 +7,7 @@ git clone https://github.com/rafaWPP/chat-zap-manager.git
 ```
 __________________________________________________________
 ```
-chat-zap-manager.git
+cd chat-zap-manager
 ```
 ___________________________________________________________
 ```
